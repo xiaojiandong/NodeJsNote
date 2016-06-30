@@ -1,0 +1,1 @@
+我现在是在stream.js中的数据，现在要通过writerStream.write(data1,UTF8);写入到output.txt文件中

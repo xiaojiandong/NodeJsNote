@@ -1,0 +1,26 @@
+{
+  "name": "NodeJsNote",
+  "version": "1.0.0",
+  "description": "Node.js test测试模块(www.runoob.com)",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaojiandong/NodeJsNote.git"
+  },
+  "keywords": [
+    "dzf19911214"
+  ],
+  
+  "author": "xiaojiandong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaojiandong/NodeJsNote/issues"
+  },
+  "homepage": "https://github.com/xiaojiandong/NodeJsNote#readme"
+}

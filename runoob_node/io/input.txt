@@ -1,0 +1,4 @@
+
+this is the input.txt content : 
+we will try pipe function
+www.runoob.com

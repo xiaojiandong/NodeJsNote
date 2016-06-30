@@ -1,0 +1,4 @@
+
+这里是 input1.txt 中的内容，
+现在要讲我写入到output1.txt内
+get me insert to output1.txt
