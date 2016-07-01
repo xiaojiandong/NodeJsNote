@@ -25,7 +25,7 @@ http.createServer(function(request,response){
   //1. 请求解析，包括文件名
   var pathname = url.parse(request.url).pathname;
   //2. 输出请求的文件名
-  console.log('Request for- '+pathname+' -received');
+  console.log('请求html文件-> '+pathname+' 接收成功！');
   //3. 从文件系统中读取请求文件的内容
   fs.readFile(pathname.substr(1),function(err,data){
     if(err){ // 存在错误

@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Node.js test测试模块(www.runoob.com)",
   "main": "server.js",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "multer": "^1.1.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "make test",
@@ -16,7 +21,6 @@
   "keywords": [
     "dzf19911214"
   ],
-  
   "author": "xiaojiandong",
   "license": "ISC",
   "bugs": {

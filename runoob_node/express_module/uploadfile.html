@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>node之express上传文件</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body>
+<h1>node之express上传文件</h1>
+<p>创建一个用于上传文件的表单，使用 POST 方法，表单 enctype 属性设置为 multipart/form-data</p>
+
+<h1>选择一个文件上传</h1>
+<form action="/file_upload" method="post" enctype="multipart/form-data">
+ <p>
+  <input type="file" name="image" size="50">
+ </p> <br />
+ <input type="submit" value="提交上传文件">
+</form>
+
+<script src="http://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+   console.log('node.js搭建express框架，上传文件');
+   var data = {
+      name : '小王',
+      sex : '男',
+      age : 20
+   };
+   if(window.localStorage){
+     localStorage.setItem('userInfo',JSON.stringify(data));
+   }
+   console.log('获取本地存储的数据');
+   var d = localStorage.getItem('userInfo');
+   d = JSON.parse(d);
+   console.log(d);
+ });
+</script>
+</body>
+</html>

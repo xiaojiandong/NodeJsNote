@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>node之express表单提交</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body>
+<h1>node之express表单提交</h1>
+ <!-- 表单提交到本地 -->
+ <!-- get表单请求 -->
+ <!-- <form action="http://127.0.0.1:8081/process_get" method="GET"> -->
+<!-- post表单请求 -->
+<form action="http://127.0.0.1:8081/process_post" method="POST">
+<p>
+First Name:<input name='first_name' />
+</p>
+<p>
+Last Name:<input name="last_name">
+</p>
+<p>
+age : <input name="age"  />
+</p>
+<p>
+ <input type="submit" value="提交">
+</p>
+ </form>
+
+<script src="http://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+   console.log('node.js搭建express框架，表单提交');
+ });
+</script>
+</body>
+</html>

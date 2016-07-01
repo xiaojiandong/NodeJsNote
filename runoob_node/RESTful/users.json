@@ -1,0 +1,35 @@
+
+{
+   "user1" : {
+      "name" : "乔峰",
+	  "password" : "password1",
+	  "profession" : "丐帮帮主",
+	  "id": 1
+   },
+   "user2" : {
+      "name" : "小龙女",
+	  "password" : "password2",
+	  "profession" : "古墓派",
+	  "id": 2
+   },
+   "user3" : {
+      "name" : "王重阳",
+	  "password" : "password3",
+	  "profession" : "全真教",
+	  "id": 3,
+	  "students" : {
+	  	"0" : {
+	  		"name" : "丘处机"
+	  	},
+	  	"1" : {
+	  		"name" : "马道长"
+	  	}
+	  }
+   },
+   "menpai" : {
+   	 "0" : "华山派",
+   	 "1" : "衡山派",
+   	 "2" : "峨眉派",
+   	 "3" : "崆峒派"
+   }
+}
