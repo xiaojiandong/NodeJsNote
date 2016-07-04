@@ -1,0 +1,33 @@
+
+<div class="edit-wrap">
+ <h1>学生信息详情页面</h1>
+    <div class="row row1 common-row">
+      <div class="col-md-6">
+        <img class="avatar-img" ng-src="{{editStudentsInfo.avatar}}" alt=""/>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+            <div class="avatar-word col-md-12">头像</div>
+            <div class="col-md-12">老师:{{editStudentsInfo.teacher}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row common-row">
+        <div class="col-md-6">姓名 : {{editStudentsInfo.name}}</div>
+        <div class="col-md-6">性别 : {{editStudentsInfo.sex}}</div>
+    </div>
+    <div class="row common-row">
+        <div class="col-md-6">班级 : {{editStudentsInfo.className}}</div>
+        <div class="col-md-6">学号 : {{editStudentsInfo.no}}</div>
+    </div>
+    <div class="row common-row">
+        <div class="col-md-6">籍贯 : {{editStudentsInfo.nativePlace}}</div>
+        <div class="col-md-6">TEL : {{editStudentsInfo.tel}}</div>
+    </div>
+    <hr/>
+    <div class="row total-score">
+      <div class="col-md-12">总分 : {{editStudentsInfo.totalScore}}</div>
+    </div>
+    <a href="javascript:;" class="btn btn-success" ng-click="onReturnBackClick()">返回全部学生列表</a>
+    <a href="javascript:;" class="btn btn-info" ng-click="onReturnSignUpClick()">返回学生注册</a>
+</div>

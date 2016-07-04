@@ -1,0 +1,118 @@
+
+<div class="sign-up-wrap">
+
+  <div class="row">
+    <div class="box-wrap col-md-5 col-md-offset-3">
+      <h3>个人信息</h3>  <!--novalidate="novalidate"属性是H5新增的，禁用使用浏览器的默认验证 -->
+      <form class="form-wrap" name="form" ng-submit="saveFormClick()" novalidate="novalidate">
+        <!-- sign-ceil 1. 总分 -->
+        <div class="row sign-ceil">
+          <div class="col-md-3"><label>1. 总分:</label></div>
+          <div class="col-md-9">
+                <input type="number" name="score" class="form-control js_score_inp" placeholder="分数在[0,750]之间" required
+                       ng-blur="onBlurScore()" ng-model="signUpInfo.totalScore" />
+              <span class="error error-name-tip" ng-show="form.score.$invalid && form.score.$error.required">*请输入分数(0~750)</span>
+          </div>
+        </div>
+        <!-- sign-ceil 2. 姓名 -->
+        <div class="row sign-ceil">
+              <div class="col-md-3"><label>2. 姓名:</label></div>
+              <div class="col-md-9">
+                  <input name="name" type="" class="form-control" placeholder=""
+                         required ng-model="signUpInfo.name" ng-minlength="1"/>
+                  <span class="error error-name-tip" ng-show="form.name.$invalid && form.name.$error.required">*首先你得有名字</span>
+              </div>
+        </div>
+        <!-- sign-ceil 3. 性别 -->
+        <div class="row sign-ceil">
+            <div class="col-md-3"><label ng-click="testClick()">3. 性别:</label></div>
+            <div class="col-md-9">
+                <label for="boy">
+                 <input type="radio" id="boy" name="sex" ng-checked="true" required value="男" ng-model="signUpInfo.sex">男的
+                </label>
+                  &nbsp;&nbsp;
+                <label for="girl">
+                  <input type="radio" id="girl" name="sex" value="女" ng-model="signUpInfo.sex">女的
+                </label>
+            </div>
+        </div>
+
+        <!-- sign-ceil 4. 学号 -->
+        <div class="row sign-ceil">
+              <div class="col-md-3"><label>4. 学号:</label></div>
+              <div class="col-md-9">
+                  <input type="number" name="nob" class="form-control" placeholder="" ng-model="signUpInfo.no" required />
+                  <span class="error error-name-tip" ng-show="form.nob.$invalid && form.nob.$error.required">*学号如(2016200301)</span>
+              </div>
+        </div>
+        <!-- sign-ceil 5. 班级 -->
+        <div class="row sign-ceil">
+              <div class="col-md-3"><label >5. 班级:</label></div>
+              <div class="col-md-9" style="padding: 0;font-size:16px">
+                  <label for="three1" >
+                      <input type="radio" id="three1" name="className" ng-checked="true" required value="高三(1)班" ng-model="signUpInfo.className">三(1)
+                  </label>
+                  &nbsp;
+                  <label for="three2">
+                      <input type="radio" id="three2" name="className" value="高三(2)班" ng-model="signUpInfo.className">三(2)
+                  </label>
+                  &nbsp;
+                  <label for="three3">
+                      <input type="radio" id="three3" name="className" value="高三(3)班" ng-model="signUpInfo.className">三(3)
+                  </label>
+                  &nbsp;
+                  <label for="three4">
+                      <input type="radio" id="three4" name="className" value="高三(4)班" ng-model="signUpInfo.className">三(4)
+                  </label>
+              </div>
+        </div>
+        <!-- sign-ceil 6. 生日 -->
+        <div class="row sign-ceil">
+              <div class="col-md-3"><label>6. 生日:</label></div>
+             <div class="col-md-9">
+                <input type="text" name="birthday" class="form-control" placeholder="" ng-model="signUpInfo.birthday" required />
+                <span class="error error-name-tip" ng-show="form.birthday.$invalid && form.birthday.$error.required">*生日如(1998.11.15)</span>
+             </div>
+        </div>
+        <!-- sign-ceil 7. 籍贯 -->
+        <div class="row sign-ceil">
+              <div class="col-md-3"><label>7. 籍贯:</label></div>
+             <div class="col-md-9">
+                <input type="text" name="nativePlace" class="form-control" placeholder="" ng-model="signUpInfo.nativePlace" required />
+                <span class="error error-name-tip" ng-show="form.nativePlace.$invalid && form.nativePlace.$error.required">*籍贯如(山西-太原)</span>
+             </div>
+        </div>
+        <!-- sign-ceil 8. TEL -->
+        <div class="row sign-ceil">
+              <div class="col-md-3"><label>8. TEL:</label></div>
+              <div class="col-md-9">
+                <input type="number" name="tel" class="form-control" placeholder="" ng-model="signUpInfo.tel" required />
+                <span class="error error-name-tip" ng-show="form.tel.$invalid && form.tel.$error.required">*电话如(13741415252)</span>
+              </div>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress  progress-striped active" ng-show="isShowBar">
+              <div class="progress-bar progress-bar-success js_bar_len" role="progressbar"
+                    aria-valuemin="0" aria-valuemax="100"
+                   style="width: 10%;">
+              </div>
+        </div>
+
+        <!-- 底部按钮 -->
+        <div class="row submit-bottom-wrap">
+            <button type="submit" class="edit-btn btn btn-info popover-hide"
+                    title="提交" data-container="body"
+                    data-toggle="popover" data-placement="top"
+                    data-trigger="hover"
+                    data-content="提交用户注册的信息">
+                提交注册信息
+            </button>
+            <a class="btn btn-danger" ng-click="returnScoreListClick()">返回成绩管理</a>
+            <a class="btn btn-primary" ng-click="returnClassListClick()">返回班级管理</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>node-angular-require</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/jquery-confirm/2.0.0/jquery-confirm.min.css" rel="stylesheet">
+<!-- 引入本地静态资源，在server1.js中配置 -->
+<link rel="stylesheet" href="/app/css/index1.css">
+</head>
+<body>
+<!-- 访问本地img静态资源 -->
+<!-- <img src="/app/images/code1.png" alt=""> -->
+
+ <div ng-controller="HomeCtrl">
+     <div ui-view=""></div>
+ </div>
+
+
+<!-- 引入requirejs -->
+ <script src="./js/require.js"></script>
+ <script src="./js/require_config.js"></script>
+ <script src="./index.js"></script>
+
+</body>
+</html>

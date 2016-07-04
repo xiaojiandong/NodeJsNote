@@ -1,0 +1,15 @@
+
+<div class="all-user-wrap-content">
+  <h1>全部学生列表</h1>
+  <ul class="students-wrap">
+   <li class="single-student-li" ng-repeat="student in students">
+     <span>考号:0{{$index + 1}}</span>&nbsp;&nbsp;
+     <span>名字:{{student.name}}</span>&nbsp;&nbsp;
+     <span>学号:{{student.no}}</span>&nbsp;&nbsp;
+     <span>班级:{{student.className}}</span>&nbsp;&nbsp;
+     <a href="javascript:;" class="btn btn-danger" ng-click="onEditClick(this)">
+      学生详情 <span class="glyphicon glyphicon-align-justify"></span>
+     </a>
+   </li>
+  </ul>
+</div>

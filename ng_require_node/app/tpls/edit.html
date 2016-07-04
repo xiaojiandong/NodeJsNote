@@ -1,0 +1,187 @@
+
+
+<div class="edit-wrap-content">
+  <div class="row edit-wrap-top js_edit_wrap_top">
+     <!-- 左侧视图 -->
+     <div class="col-md-4">
+      <h1>展示VIEW</h1><br><br>
+      <div class="row left-row">
+        <div class="col-md-12">
+            <img ng-src="{{singleStudentInfo.avatar}}" alt="" class="img-thumbnail">
+        </div>
+        <div class="col-md-12">
+          <div class="row common-row">
+             <div class="col-md-6 key-title">总分 :</div>
+             <div class="col-md-6">{{singleStudentInfo.totalScore}}</div>
+          </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row common-row">
+                <div class="col-md-6 key-title">姓名 :</div>
+                <div class="col-md-6">{{singleStudentInfo.name}}</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row common-row">
+                <div class="col-md-6 key-title">性别 :</div>
+                <div class="col-md-6">{{singleStudentInfo.sex}}</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row common-row">
+                <div class="col-md-6 key-title">班级 :</div>
+                <div class="col-md-6">{{singleStudentInfo.className}}</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row common-row">
+                <div class="col-md-6 key-title">学号 :</div>
+                <div class="col-md-6">{{singleStudentInfo.no}}</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row common-row">
+                <div class="col-md-6 key-title">生日 :</div>
+                <div class="col-md-6">{{singleStudentInfo.birthday}}</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row common-row">
+                <div class="col-md-6 key-title">TEL :</div>
+                <div class="col-md-6">{{singleStudentInfo.tel}}</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row common-row">
+                <div class="col-md-6 key-title">籍贯 :</div>
+                <div class="col-md-6">{{singleStudentInfo.nativePlace}}</div>
+            </div>
+        </div>
+        <div class="col-md-12">
+              <div class="row common-row">
+                  <div class="col-md-6 key-title">老师 :</div>
+                  <div class="col-md-6">{{singleStudentInfo.teacher}}</div>
+              </div>
+        </div>
+      </div>
+     </div>
+     <!-- 右侧编辑 -->
+     <div class="col-md-8">
+         <h1>编辑EDIT</h1><br><br>
+         <form class="form-wrap">
+             <div class="form-group">
+               <div class="row">
+                 <div class="col-md-2"><label>总分 : </label></div>
+                 <div class="col-md-10">
+                   <input type="number" class="js_score_edit form-control"
+                          placeholder="原本的总分 {{editInfo.score}}"
+                          ng-blur="onScoreBlur()"
+                           ng-model="editInfo.score">
+                 </div>
+               </div>
+             </div>
+             <div class="form-group">
+                 <div class="row">
+                     <div class="col-md-2"><label>姓名 : </label></div>
+                     <div class="col-md-10">
+                         <input  type="text" maxlength="4" class="form-control" placeholder="原本的名字 {{singleStudentInfo.name}}"
+                                 ng-model="editInfo.name">
+                     </div>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="row">
+                     <div class="col-md-2"><label>班级 : </label></div>
+                     <div class="col-md-6">
+                         <input type="" class="form-control" placeholder="{{editInfo.className}}" readonly
+                                ng-model="editInfo.selectedClass">
+                     </div>
+                     <div class="col-md-4">
+                        <span>选择班级:</span>
+                        <select ng-model="editInfo.selectedClass" ng-change="onChangeClassOption()">
+                           <option ng-repeat="clas in classes" value="{{clas.className}}">{{clas.className}}</option>
+                        </select>
+                     </div>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="row">
+                     <div class="col-md-2"><label>学号 : </label></div>
+                     <div class="col-md-10">
+                         <input type="number" class="form-control" placeholder="原本的学号 {{singleStudentInfo.no}}"
+                                ng-model="editInfo.no">
+                     </div>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="row">
+                     <div class="col-md-2"><label>生日 : </label></div>
+                     <div class="col-md-10">
+                         <input type="" class="form-control" placeholder="原本的生日 {{singleStudentInfo.birthday}}"
+                                ng-model="editInfo.birthday">
+                     </div>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="row">
+                     <div class="col-md-2"><label>籍贯 : </label></div>
+                     <div class="col-md-10">
+                         <input type="" class="form-control" placeholder="原本的籍贯 {{singleStudentInfo.nativePlace}}"
+                                 ng-model="editInfo.nativePlace">
+                     </div>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <div class="row">
+                     <div class="col-md-2"><label>TEL : </label></div>
+                     <div class="col-md-10">
+                         <input type="" class="form-control" placeholder="原本的电话 {{singleStudentInfo.tel}}"
+                                 ng-model="editInfo.tel">
+                     </div>
+                 </div>
+             </div>
+             <br/><br/><br/><br/>
+         </form>
+     </div>
+  </div>
+    <div class="row button-wrap">
+        <button type="button" class="edit-btn btn btn-success popover-hide btn-lg"
+                ng-class="{btnWarning:hasDeleted}"
+                title="保存" data-container="body"
+                data-toggle="popover" data-placement="top"
+                data-trigger="hover"
+                data-content="点击保存之前的修改"
+                ng-disabled="hasDeleted"
+                ng-click="onSubmitInfoClick()">
+            保存
+        </button>
+        <button type="button" class="edit-btn btn btn-info popover-hide btn-lg"
+                ng-class="{btnWarning:hasDeleted}"
+                title="重置" data-container="body"
+                data-toggle="popover" data-placement="top"
+                data-trigger="hover"
+                data-content="点击清空之前的修改"
+                ng-disabled="hasDeleted"
+                ng-click="onResetInfoClick()">
+            重置
+        </button>
+
+        <button type="button" class="edit-btn btn btn-danger btn-lg"
+                title="返回"
+                ng-click="onReturnScoreClick()">
+            返回成绩管理
+        </button>
+
+        <button type="button" class="edit-btn btn btn-info popover-hide btn-lg"
+                title="删除(删除之后无法重置)" data-container="body"
+                data-toggle="popover" data-placement="top"
+                data-trigger="hover"
+                data-content="确定删除 {{singleStudentInfo.name}} 的信息"
+                ng-click="onDeleteInfoClick()">
+            删除
+        </button>
+    </div>
+
+
+</div>
+

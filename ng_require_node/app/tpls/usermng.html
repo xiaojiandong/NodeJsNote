@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="list-group">
+                <ul>
+                 <li ng-repeat='uiSref in uiSrefs' style="font-size: 18px">
+                  <a ui-sref='index.usermng.{{uiSref.url}}' ng-click='setUiSrefClick($index)'
+                  class="list-group-item" ng-class='{active : $index == currentIndex}'>
+                	{{uiSref.word}}
+                  </a>
+                 </li>	
+                </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div ui-view></div>
+    </div>
+</div>

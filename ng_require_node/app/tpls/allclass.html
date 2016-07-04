@@ -1,0 +1,38 @@
+
+
+<div class="all-class-content">
+  <div class="row">
+    <div class="col-md-12">
+        <h1>全部班级列表</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 all-class-item-wrap">
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr style="text-align: center">
+                   <th>班级名称</th>
+                   <th>班主任</th>
+                   <th>学生人数</th>
+                   <th>分科</th>
+                   <th>班级详情</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr  ng-repeat="classInfo in classInfos">
+                <td>{{classInfo.name}}</td>
+                <td>{{classInfo.teacher}}</td>
+                <td>{{classInfo.studentNum}}</td>
+                <td>{{classInfo.subject}}</td>
+                <td>
+                  <a href="javascript:;" class="btn btn-info"  attr-id="{{$index}}"
+                     ng-click="onClassDetailClick(classInfo)">
+                    班级详情 <span class="glyphicon glyphicon-user"></span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

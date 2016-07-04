@@ -1,0 +1,36 @@
+
+<div class="class-detail-content">
+   <h1>{{classLocalInfo.name}} - 班级详情</h1>
+   <h1>班导 - {{classLocalInfo.teacher}}</h1>
+    <!-- 中间学生主体 -->
+    <ul class="class-detail-wrap-ul" ng-show="hasStudent">
+      <li ng-repeat="classDetail in classDetails | filter : classTypefilter" class="row single-clas-wrap-li">
+         <div class="row">
+            <div class="col-md-2">
+                <img ng-src="{{classDetail.avatar}}" class="img-thumbnail" alt=""/>
+            </div>
+            <div class="col-md-10 right-md10-wrap">
+               <div class="row" style="line-height: 54px">
+                 <div class="col-md-1 ceil score" >总分:<br>{{classDetail.totalScore}}</div>
+                 <div class="col-md-1 ceil" >名字:<br>{{classDetail.name}}</div>
+                 <div class="col-md-1 ceil" >性别:<br>{{classDetail.sex}}</div>
+                 <div class="col-md-2 ceil" >籍贯:<br>{{classDetail.nativePlace}}</div>
+                 <div class="col-md-2 ceil" >生日:<br>{{classDetail.birthday}}</div>
+                 <div class="col-md-2 ceil" >TEL:<br>{{classDetail.tel}}</div>
+                 <div class="col-md-3 ceil" >学号:<br>{{classDetail.no}}</div>
+               </div>
+            </div>
+         </div>
+      </li>
+    </ul>
+
+    <!-- 一个学生都没有的img提示 -->
+    <div class="has-no-student-wrap row" ng-show="!hasStudent">
+       <img class="col-md-12" src="http://down1.sucaitianxia.com/psd02/psd169/psds31832.jpg" alt=""/>
+    </div>
+
+    <!-- 底部返回全部班级 -->
+    <a href="javascript:;" class="return-btn btn btn-success" attr-id="0" ng-click="onReturnClassListClick()">
+        返回全部班级 <span class="glyphicon glyphicon-align-justify"></span>
+    </a>
+</div>

@@ -1,0 +1,10 @@
+
+// 知识点：
+// angular.js + require.js + node.js
+
+1. node.js 搭建本地服务器
+2. angular.js 创建单页应用
+3. 访问本地的css,js,img等静态文件
+4. 启动：在server1.js所在根目录下，打开Git Bash
+   命令：node server1.js
+   http://127.0.0.1:8082/app/index.html#/index

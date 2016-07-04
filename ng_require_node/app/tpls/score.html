@@ -1,0 +1,49 @@
+
+<div class="score-wrap-content">
+  <ul class="score-wrap-ul">
+    <!--<li class="row score-single-li" ng-repeat="student in students | orderBy:colName:birthDay" attr-id="{{$index}}">-->
+    <li class="row score-single-li" ng-repeat="student in students" attr-id="{{$index}}">
+     <div class="col-md-12 top-detail">
+      <div class="row">
+        <div class="avatar-wrap col-md-3">
+         <!--<img class="img" dev="http://img1.3lian.com/gif/more/11/201207/4636cadac90c9f30ec67002f328c5edb.jpg" alt=""/>-->
+         <img class="img" ng-src="{{student.avatar}}" alt=""/>
+        </div>
+        <div class="name col-md-2"  style="padding: 0">
+          名字:{{student.name}}
+        </div>
+        <div class="no col-md-2" style="padding:0;color:red;font-weight:bold;">
+          <!--学号:{{student.no}}-->
+            总分:{{student.totalScore}}
+        </div>
+        <div class="class-name col-md-2">
+          {{student.className}}
+        </div>
+        <div class="class-name col-md-2" style="padding: 0">
+          老师:{{student.teacher}}
+        </div>
+        <div class="edit col-md-1">
+         <div class="tip-alert">编辑:{{student.name}}</div>
+         <a href="javascript:;" class="edit-btn btn btn-info" title="{{student.name}}"
+            ng-click="onEditClick(student,$index)">
+            编辑 <span class="glyphicon glyphicon-align-justify"></span>
+         </a>
+       </div>
+      </div>
+     </div>
+
+     <!-- 鼠标移入，下面的才会出现 -->
+     <div class="bottom-wrap">
+      <div class="row">
+          <div class="col-md-3 ceil">学号<br/>{{student.no}}</div>
+          <!--<div class="col-md-2 ceil">总分<br/>{{student.totalScore}}</div>-->
+          <div class="col-md-3 ceil">生日<br/>{{student.birthday}}</div>
+          <div class="col-md-1 ceil" style="padding: 0">性别<br/>{{student.sex}}</div>
+          <div class="col-md-2 ceil">籍贯<br/>{{student.nativePlace}}</div>
+          <div class="col-md-3 ceil">电话<br/>{{student.tel}}</div>
+      </div>
+     </div>
+    </li>
+
+  </ul>
+</div>

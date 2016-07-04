@@ -1,0 +1,12 @@
+<nav class="navbar navbar-inverse top-navbar-wrap" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="javascript:;">SPA综合实例</a>
+    </div>
+    <ul class="nav navbar-nav navbar-nav-ul">
+        <li ng-repeat="tobarItem in tobarItems">
+            <a class="common-topbar topbar-{{$index}}" ng-class="{activeBar:$index == activeIndex}"
+               ng-click="onTopNavClick($index)"
+               ui-sref="{{tobarItem.sref}}">{{tobarItem.text}}</a>
+        </li>
+    </ul>
+</nav>

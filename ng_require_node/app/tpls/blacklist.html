@@ -1,0 +1,28 @@
+
+
+<div class="black-wrap-content">
+    <h1>补考名单</h1>
+    <div class="row">
+        <div class="col-md-6"  ng-repeat="student in students | filter : blackFilter | orderBy : 'totalScore':false">
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="honor-img" ng-src="{{student.avatar}}" alt=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 score">
+                    <p>分数 : {{student.totalScore}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"><p>名字 : {{student.name}}</p></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"><p>班级 : {{student.className}}</p></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"><p>距离及格(400)还差 : {{400 - student.totalScore}}</p></div>
+            </div>
+        </div>
+    </div>
+</div>
