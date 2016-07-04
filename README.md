@@ -8,3 +8,6 @@ NodeJs practice
 ###   2.2 node 命令执行：
 ![image](https://github.com/xiaojiandong/NodeJsNote/blob/master/day1/xiaojian/image/node-server1.png)
 
+## 3. angular + require + node 搭建本地服务器
+![image](https://github.com/xiaojiandong/NodeJsNote/blob/master/ng_require_node/app/images/code1.png)
+
