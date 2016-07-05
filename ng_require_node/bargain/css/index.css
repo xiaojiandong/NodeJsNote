@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑';
+  list-style-type: none;
+  font-size: 24px;
+}
+img {
+  display: block;
+}
+.activity-begin-tips {
+  width: 640px;
+}
+.index-content-wrap {
+  width: 640px;
+}
+.index-content-wrap .kill-price-tip {
+  width: 100%;
+}
+.index-content-wrap .goods-tab-ul {
+  width: 640px;
+  height: 91px;
+}
+.index-content-wrap .goods-tab-ul .single-tab-li {
+  float: left;
+  width: 212px;
+  height: 100%;
+}

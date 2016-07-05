@@ -8,3 +8,5 @@
 4. 启动：在server1.js所在根目录下，打开Git Bash
    命令：node server1.js
    http://127.0.0.1:8082/app/index.html#/index
+
+5.砍价活动 bargain，加gulp，localStorage

@@ -1,0 +1,244 @@
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: '微软雅黑';
+	list-style-type:none;
+    font-size: 24px;
+}
+img{
+	display : block;
+}
+
+.common-btn{
+  position: absolute;
+  width: 180px;
+  height: 65px;
+  //       background: rgba(0,0,0,0.6);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 65px;
+  color: #fff;
+}
+
+.banner-img{
+  width: 640px;
+}
+
+.activity-begin-tips{
+	width : 640px;
+}
+
+// 活动首页
+.index-content-wrap{
+    width : 640px;
+	.kill-price-tip{
+      width : 100%;
+	}
+	.goods-tab-ul{ // 3个tab导航点击
+      width: 640px;
+      height: 85px;
+      margin-top: 20px;
+      .single-tab-li{
+        position: relative;
+        float: left;
+        width: 184px;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        margin-left: 23px;
+        box-sizing: border-box;
+        .two-img-wrap{
+          .tab-img{
+            width: 100%;
+          }
+          .tab-img-red{
+            display: none;
+          }
+        }
+        .activeShowRed{ // 高亮红色背景
+          .tab-img-red{
+            display: block;
+          }
+          .tab-img-orange{
+            display: none;
+          }
+        }
+
+        .tab-name{
+          position: absolute;
+          width: 100%;
+          height: 85px;
+          top: 0;
+          left: 0;
+          line-height: 70px;
+        }
+      }
+	}
+
+  // 首页底部3个商品
+  .goods-bottom-wrap{
+    width: 640px;
+    .act-bg-wrap{
+      position: relative;
+      width: 640px;
+      .act-bg-img{
+        width: 100%;
+      }
+      .start-kill-btn{//点击发起砍价
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 70px;
+        background: rgba(0,0,0,0.6);
+      }
+      .kill-btn-0,.kill-btn-2{
+        top: 155px;
+        left: 208px;
+      }
+      .kill-btn-1{
+        top: 200px;
+        left: 420px;
+      }
+    }
+  }
+
+  // 活动规则/活动声明
+  .common-img-rule{
+    width: 640px;
+    margin: 0 auto;
+  }
+}
+
+// 倒计时
+.act-down-wrap{
+   width: 640px;
+  .cut-words-tips-wrap{ // 每场砍价均持续...
+    width: 640px;
+    height: 120px;
+    padding-top: 18px;
+    color: #fff;
+    background: #ffbe33;
+    box-sizing: border-box;
+  }
+  .need-your-help-tip{
+    width: 640px;
+  }
+  .act-top-bg-wrap{
+    position: relative;
+    .act-top-img{
+      width: 640px;
+    }
+   .goods-info-wrap{
+     position: absolute;
+     width: 500px;
+     height: 130px;
+     top: 170px;
+     left: 20px;
+     border: 2px solid red;
+     box-sizing: border-box;
+     .price{
+       position: absolute;
+       top: 5px;
+       left: 140px;
+       color: red;
+     }
+
+     .help-ta-kill{ // 帮ta砍价
+       .common-btn;
+       left: 20px;
+       top: 57px;
+       background-image: url("/bargain/images/red-bg-btn.png");
+     }
+     .now-pay-btn{ // 立即付款
+       .common-btn;
+       display: none;
+       left: 20px;
+       top: 57px;
+       background-image: url("/bargain/images/red-bg-btn.png");
+     }
+     .start-kill-again{ // 重新发起砍价团
+       display: none;
+       .common-btn;
+       left: 225px;
+       top: 57px;
+       background-image: url("/bargain/images/red-bg-btn.png");
+     }
+   }
+  }
+
+  .common-mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: #000;
+  }
+  // 点击发起砍价团后的弹窗
+  .goods-info-mask{
+    display: none;
+    .common-mask;
+  }
+
+  // 帮ta砍价成功的弹窗
+  .kill-click-success-mask{
+//    display: none;
+    .common-mask;
+    .kill-success-mask-bg{
+      position: fixed;
+      z-index: 10;
+      width: 600px;
+      height: 680px;
+      left: 50%;
+      top: 50%;
+      padding-top: 220px;
+      margin-left: -300px;
+      margin-top: -340px;
+      background-image: url("/bargain/images/kill-success-mask-bg.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      -webkit-animation: killAnimate 0.5s 0.2s backwards;
+      box-sizing: border-box;
+      span{
+        color: red;
+        font-size: 35px;
+        font-weight: bold;
+      }
+    }
+    @-webkit-keyframes killAnimate {
+      0%{
+        -webkit-transform: translateY(-200px);
+        opacity: 0;
+      }
+      100%{
+        -webkit-transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+    .close-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: rgba(0,0,0,0.6);
+    }
+    .share-friends-btn{ //分享给好友
+      .common-btn;
+      background-image: url("/bargain/images/red-bg-btn.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      left: 208px;
+      bottom: 100px;
+    }
+  }
+
+}
+

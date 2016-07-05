@@ -1,0 +1,1 @@
+require(["base","controllers"],function(t,e){var r=angular.module("RouteApp",["ui.router","RouterCtrl","RouterServices"]);r.config(function(t,e){e.otherwise("/index"),t.state("index",{url:"/index",templateUrl:"tpls/index.html",controller:"HomeCtrl"}).state("act_down",{url:"/act_down",templateUrl:"tpls/act_down.html"})}),SUBJ.angularInit("RouteApp"),SUBJ.outerContainerWrapFn()});

@@ -1,0 +1,47 @@
+
+<!-- 倒计时页面 -->
+<div class="act-down-wrap">
+
+    <div class="cut-words-tips-wrap">
+     <p>每场砍价均持续6小时</p>
+     <p class="js_time_p">本场剩余时间 : <span class="js_time"></span></p>
+    </div>
+
+    <img class="need-your-help-tip" src="./images/need-your-help-tip.jpg" alt=""/>
+    <!-- 商品图片 -->
+    <div class="act-top-bg-wrap">
+      <img class="act-top-img" ng-src="{{actTopBgInfo.src}}" alt=""/>
+      <div class="goods-info-wrap">
+        <p class="price">￥{{actTopBgInfo.price}}</p>
+        <div class="help-ta-kill js_help_ta_kill"
+             ng-click="onHelpTaKillClick()">
+            帮ta砍价</div>
+        <div class="now-pay-btn js_now_pay_btn"
+               ng-click="onPayClick()">
+            立即付款</div>
+        <div class="start-kill-again js_start_kill_again"
+             ng-click="onStartAgain()">
+          重新发起砍价</div>
+          <!--<p>发起砍价团</p>-->
+          <!--<p>立即付款</p>-->
+      </div>
+    </div>
+
+   <!-- 弹窗 -->
+   <div class="goods-info-mask">
+     <h1>这里是弹窗</h1>
+   </div>
+
+   <!-- 帮ta砍价成功的弹窗 -->
+   <div class="kill-click-success-mask"
+        ng-show="isShowSuccessMask"
+        ng-click="onCloseMask()">
+     <div class="kill-success-mask-bg" ng-click="onStopPropagationClick()">
+        <div class="close-btn" ng-click="onCloseMask()"></div>
+        <h1>你刚刚砍了<span> {{actTopBgInfo.actName}} </span></h1>
+        <h1>砍掉了<span> {{randomCutPrice}} </span>元</h1>
+        <h1>最终价格<span> ￥{{actTopBgInfo.price}} </span></h1>
+        <div class="share-friends-btn" ng-click="onShareFriendsClick()">分享给好友</div>
+     </div>
+   </div>
+</div>

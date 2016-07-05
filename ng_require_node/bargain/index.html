@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>砍价活动</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/jquery-confirm/2.0.0/jquery-confirm.min.css" rel="stylesheet">
+    <!-- 引入本地静态资源，在server1.js中配置 -->
+    <!--<link rel="stylesheet" href="/bargain/css/index.css">-->
+    <link rel="stylesheet" href="./lib/css/index.css">
+</head>
+<body onunload="checkLeave()">
+<img class="banner-img" src="./images/banner2.jpg" alt="">
+<img class="activity-begin-tips" src="./images/activity-begin-tips.jpg" alt="">
+
+   <div ui-view="">
+
+   </div>
+
+<!-- 引入requirejs -->
+ <script src="./js/require.js"></script>
+ <script src="./js/require_config.js"></script>
+ <script src="index.js"></script>
+
+</body>
+</html>

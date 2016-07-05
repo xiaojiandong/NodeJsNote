@@ -1,0 +1,32 @@
+
+
+<div class="index-content-wrap">
+
+
+<img class="kill-price-tip" src="./images/other-activity-kill-price-tip.png" alt="">
+
+<!-- tab切换卡 -->
+<ul class="goods-tab-ul">
+  <li class="single-tab-li" ng-repeat="tab in tabs" ng-click="onTabClick(tab)">
+    <div class="two-img-wrap" ng-class="{activeShowRed:$index==activeIndex}">
+        <img class="tab-img tab-img-orange" ng-src="{{tab.src_orange}}" alt=""/>
+        <img class="tab-img tab-img-red" ng-src="{{tab.src_red}}" alt=""/>
+    </div>
+    <p class="tab-name">{{tab.tab_name}}</p>
+  </li> 
+</ul>
+
+<!-- 对应tab切换卡的商品 -->
+<div class="goods-bottom-wrap" ng-repeat="actBg in actBgSrc | filter: { src_id: activeIndex } ">
+ <div class="act-bg-wrap" ng-class="current_act_bg_wrap_{{activeIndex}}">
+   <img class="act-bg-img" ng-src="{{actBg.src}}" alt=""/>
+   <a class="start-kill-btn kill-btn-{{activeIndex}}" href=""
+           ng-click="onStartKillClick(actBg)">
+   </a>
+ </div>
+</div>
+
+
+  <img class="common-img-rule" src="./images/activity-rules-img.jpg" alt="">
+  <img class="common-img-rule" src="./images/activity-declare-img.jpg" alt="">
+</div>
