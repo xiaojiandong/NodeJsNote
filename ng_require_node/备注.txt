@@ -10,3 +10,5 @@
    http://127.0.0.1:8082/app/index.html#/index
 
 5.砍价活动 bargain，加gulp，localStorage
+   命令：node server2.js
+   http://127.0.0.1:8083/bargain/index.html#/index/home
