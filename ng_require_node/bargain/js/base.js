@@ -1,6 +1,6 @@
 
-define(['jquery','jquery_confirm','bootstrap','router'],
-	function(jquery,jquery_confirm,bootstrap,router){
+define(['jquery','jquery_confirm','angular_animate','bootstrap','router'],
+	function(jquery,jquery_confirm,angular_animate,bootstrap,router){
  
    return SUBJ = {
        angularInit : function (app) {

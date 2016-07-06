@@ -7,6 +7,7 @@ require.config({
      'jquery_confirm' : 'http://cdn.bootcss.com/jquery-confirm/2.0.0/jquery-confirm.min',
      'bootstrap' : 'http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min',
      'angular' : 'angular-1.3.0',
+     'angular_animate' : 'angular-animate',
      'router' : 'angular-ui-router',
      'base' : 'base',
      'controllers' : 'controllers',
@@ -24,6 +25,10 @@ require.config({
           'deps' : ['jquery'],
           'exports' : 'bootstrap'
       },
+      'angular_animate' : {
+          'deps' : ['angular'],
+          'exports' : 'angular_animate'
+      },
       'router' : { // router依赖angular
           'deps' : ['angular'],
           'exports' : 'router'
@@ -37,6 +42,7 @@ require(
         'jquery_confirm',
         'bootstrap',
         'angular',
+        'angular_animate',
         'router',
         'base',
         'controllers',
@@ -47,6 +53,7 @@ require(
         jquery_confirm,
         bootstrap,
         angular,
+        angular_animate,
         router,
         base,
         controllers,

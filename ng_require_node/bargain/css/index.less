@@ -1,5 +1,15 @@
 
-
+.ellipsizeSingleLine(@width){//单行...
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+  width:@width;
+}
+.ellipsizeMultiLines(@line-number){//单多行...
+  display: -webkit-box;
+  -webkit-line-clamp: @line-number;
+  -webkit-box-orient: vertical;
+}
 
 *{
 	margin: 0;
@@ -23,6 +33,46 @@ img{
   line-height: 65px;
   color: #fff;
 }
+.common-tab-ul{
+  width: 640px;
+  height: 85px;
+  margin-top: 20px;
+  .single-tab-li{
+    position: relative;
+    float: left;
+    width: 184px;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    margin-left: 23px;
+    box-sizing: border-box;
+    .two-img-wrap{
+      .tab-img{
+        width: 100%;
+      }
+      .tab-img-red{
+        display: none;
+      }
+    }
+    .activeShowRed{ // 高亮红色背景
+      .tab-img-red{
+        display: block;
+      }
+      .tab-img-orange{
+        display: none;
+      }
+    }
+
+    .tab-name{
+      position: absolute;
+      width: 100%;
+      height: 85px;
+      top: 0;
+      left: 0;
+      line-height: 70px;
+    }
+  }
+}
 
 .banner-img{
   width: 640px;
@@ -39,44 +89,7 @@ img{
       width : 100%;
 	}
 	.goods-tab-ul{ // 3个tab导航点击
-      width: 640px;
-      height: 85px;
-      margin-top: 20px;
-      .single-tab-li{
-        position: relative;
-        float: left;
-        width: 184px;
-        height: 100%;
-        color: #fff;
-        text-align: center;
-        margin-left: 23px;
-        box-sizing: border-box;
-        .two-img-wrap{
-          .tab-img{
-            width: 100%;
-          }
-          .tab-img-red{
-            display: none;
-          }
-        }
-        .activeShowRed{ // 高亮红色背景
-          .tab-img-red{
-            display: block;
-          }
-          .tab-img-orange{
-            display: none;
-          }
-        }
-
-        .tab-name{
-          position: absolute;
-          width: 100%;
-          height: 85px;
-          top: 0;
-          left: 0;
-          line-height: 70px;
-        }
-      }
+      .common-tab-ul;
 	}
 
   // 首页底部3个商品
@@ -95,7 +108,7 @@ img{
         left: 0;
         width: 150px;
         height: 70px;
-        background: rgba(0,0,0,0.6);
+        //background: rgba(0,0,0,0.6);
       }
       .kill-btn-0,.kill-btn-2{
         top: 155px;
@@ -140,7 +153,7 @@ img{
      height: 130px;
      top: 170px;
      left: 20px;
-     border: 2px solid red;
+//     border: 2px solid red;
      box-sizing: border-box;
      .price{
        position: absolute;
@@ -181,14 +194,201 @@ img{
     background: rgba(0,0,0,0.6);
     color: #000;
   }
+
+  .price-words{
+    background: #ffeec2;
+    padding-bottom: 20px;
+    p{
+     font-size: 30px;
+    }
+  }
+
   // 点击发起砍价团后的弹窗
   .goods-info-mask{
     display: none;
     .common-mask;
   }
 
-  // 帮ta砍价成功的弹窗
-  .kill-click-success-mask{
+// 倒计时页面，tab切换卡
+.tab-wrap-ul{
+  .common-tab-ul;
+}
+
+// tab0砍价者
+.tab011.ng-enter {
+    -webkit-animation: fadIn0 0.5s 0s backwards;
+}
+@-webkit-keyframes fadIn0 {
+  0%{
+      -webkit-transform: translateX(640px);
+      -webkit-opacity: 0;
+  }
+  100%{
+      -webkit-transform: translateX(0px);
+      -webkit-opacity: 1;
+  }
+}
+.tab011.ng-leave {
+    -webkit-animation: fadOut0 0.5s 0s backwards;
+}
+@-webkit-keyframes fadOut0 {
+  0%{
+      -webkit-transform: translateX(0px);
+      -webkit-opacity: 1;
+    }
+  100%{
+      -webkit-transform: translateX(-640px);
+      -webkit-opacity: 0;
+  }
+}
+// tab1其他砍价团
+.tab111.ng-enter {
+    -webkit-animation: fadIn1 0.5s 0s backwards;
+}
+@-webkit-keyframes fadIn1 {
+    0%{
+      -webkit-transform: translateX(-640px);
+//      -webkit-transform: scale(0);
+      -webkit-opacity: 0;
+    }
+    100%{
+      -webkit-transform: translateX(0px);
+//      -webkit-transform: scale(1);
+      -webkit-opacity: 1;
+    }
+}
+.tab111.ng-leave {
+    -webkit-animation: fadOut1 0.5s 0s backwards;
+}
+@-webkit-keyframes fadOut1 {
+    0%{
+      -webkit-transform: translateX(0px);
+      //-webkit-transform: scale(1);
+      -webkit-opacity: 1;
+    }
+    100%{
+      -webkit-transform: translateX(-640px);
+      -webkit-opacity: 0;
+    }
+}
+// tab2活动规则声明
+.tab211.ng-enter {
+    -webkit-animation: fadIn2 0.5s 0s backwards;
+}
+@-webkit-keyframes fadIn2 {
+    0%{
+      -webkit-transform: translateX(-640px);
+      -webkit-opacity: 0;
+    }
+    100%{
+      -webkit-transform: translateX(0px);
+      -webkit-opacity: 1;
+    }
+}
+.tab211.ng-leave {
+    -webkit-animation: fadOut2 0.5s 0s backwards;
+}
+@-webkit-keyframes fadOut2 {
+    0%{
+      -webkit-transform: translateX(0px);
+      -webkit-opacity: 1;
+    }
+    100%{
+      -webkit-transform: translateX(-640px);
+      -webkit-opacity: 0;
+    }
+}
+
+// 砍价者/其他砍价团/规则声明父容器
+.content-bottom-wrap{
+  padding-bottom: 40px;
+  .common-content-class{
+//    background: pink;
+  }
+  .killer-people-wrap{ // 1.砍架者轮播图
+    position: relative;
+//    border: 2px solid #000;
+    height: 505px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .user-scroll-wrap{
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 600px;
+//      border: 2px solid #f00;
+      margin: 0 auto;
+      overflow: hidden;
+      box-sizing: border-box;
+      .single-user-li{
+        overflow: hidden;
+        margin-top: 15px;
+        .avatar-wrap{
+          float: left;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          overflow: hidden;
+          img{
+            width: 100%;
+          }
+        }
+        .words{
+          float: left;
+          width: 470px;
+          height: 100px;
+          line-height: 100px;
+          margin-left: 15px;
+          text-align: left;
+          .ellipsizeSingleLine(470px);
+          span{
+            color: red;
+          }
+        }
+      }
+    }
+  }
+  .other-kill-tuan-wrap{ // 2. 其他砍价团
+    width: 640px;
+    .two-kill-wrap{
+      position: relative;
+      .act-img{
+        width: 100%;
+      }
+      .common-start-btn{
+        position: absolute;
+        top: 155px;
+        left: 200px;
+        width: 170px;
+        height: 80px;
+//        background: rgba(0,0,0,0.6);
+      }
+      .start-btn-0,
+      .start-btn-1,
+      .start-btn-2{
+        .common-start-btn;
+      }
+      .start-btn-1{
+        top: 185px;
+        left: 410px;
+      }
+    }
+  }
+  .act-rulers-wrap{ // 3. 活动规则声明
+    .rule-img{
+      width: 640px;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+
+
+
+// 帮ta砍价成功的弹窗
+.kill-click-success-mask{
 //    display: none;
     .common-mask;
     .kill-success-mask-bg{
@@ -228,7 +428,7 @@ img{
       right: 0;
       width: 100px;
       height: 100px;
-      background: rgba(0,0,0,0.6);
+      //background: rgba(0,0,0,0.6);
     }
     .share-friends-btn{ //分享给好友
       .common-btn;
@@ -242,3 +442,18 @@ img{
 
 }
 
+
+// 返回顶部
+.return-top-btn{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  bottom: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+//  background: red;
+  background-image: url("/bargain/images/return-top.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}

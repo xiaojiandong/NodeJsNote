@@ -3,7 +3,7 @@
 require(['base','controllers'],function(base,controllers){
   
   //var routeApp = angular.module('RouteApp',['ui.router','RouterCtrl','RouterServices']);
-  var routeApp = angular.module('RouteApp',['ui.router','RouterCtrl','RouterServices']);
+  var routeApp = angular.module('RouteApp',['ngAnimate','ui.router','RouterCtrl','RouterServices']);
 
    routeApp.config(function($stateProvider, $urlRouterProvider) {
      $urlRouterProvider.otherwise('/index/home');

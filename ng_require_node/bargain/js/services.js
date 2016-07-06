@@ -42,6 +42,16 @@ define(['base'],function(base){
             {'src' : './images/tuo-mao-top1.jpg','src_id' : '2', 'price' : '300',
                 'produce_id':'57','sku' : '201605301528039215','actName' : '激光脱毛'}
         ];
+        // 信息轮播
+        goodsInfo.userInfo = [
+            {'name':'张三','cut_price':'40','avatar':'http://ww2.sinaimg.cn/bmiddle/db1504dajw1err7gfg9w4j20dd0hsmyl.jpg'},
+            {'name':'李四','cut_price':'29','avatar':'http://ww2.sinaimg.cn/large/db1504dajw1enlso9m5ctj20xf18gtgl.jpg'},
+            {'name':'三天不打上梁揭瓦','cut_price':'51','avatar':'http://ww2.sinaimg.cn/bmiddle/8f14f57fgw1esg61edmwxj20c80g9q48.jpg'},
+            {'name':'赵六','cut_price':'16','avatar':'http://aliimg.changba.com/cache/photo/376485892_640_640.jpg'},
+            {'name':'田七','cut_price':'22','avatar':'http://ww2.sinaimg.cn/large/db1504dajw1etc9rif8ovj20qo0zktgg.jpg'},
+            {'name':'孔三子','cut_price':'48','avatar':'http://img.52fuqing.com/upload/news/20160303/20160303153849354.jpg'},
+            {'name':'王二狗','cut_price':'13','avatar':'http://hzdaily.hangzhou.com.cn/dskb/media/1/3/2016-03/03/B16/res02_attpic_brief.jpg'}
+        ];
        return goodsInfo;
     });
 

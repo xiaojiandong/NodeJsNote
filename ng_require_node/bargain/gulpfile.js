@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var less = require('gulp-less'); // 编译.less文件
+var htmlmin = require('gulp-htmlmin'); // 压缩html
 var minifycss = require('gulp-minify-css'); // 压缩.css
 var uglify = require('gulp-uglify'); // 压缩.js
 var del = require('del'); // 清除之前的文件
@@ -16,6 +17,15 @@ gulp.task('cssmin' , function(){
    .pipe(gulp.dest('./lib/css'))
    .pipe(livereload({start:true})); // 文件监听
 });
+
+// 压缩/监听html文件
+gulp.task('htmlmin',function(){
+ gulp.src(['./tpls/*.html','index.html'])
+     .pipe(htmlmin())
+     .pipe(gulp.dest('./lib/html'))
+     .pipe(livereload({start:true}));
+});
+
 
 //监听js文件
 gulp.task('jsmin',function(){
@@ -36,7 +46,7 @@ gulp.task('clean' , function(cb){
 }) ;
 
 gulp.task('default',['clean'],function(){
-  gulp.start(['cssmin','jsmin']);
+  gulp.start(['cssmin','jsmin','htmlmin']);
 });
 
 gulp.task('watch' , function(){
@@ -44,4 +54,5 @@ gulp.task('watch' , function(){
     // 监听开发路径文件的变化，并执行该任务style
     gulp.watch('./css/*.less',['cssmin']);
     gulp.watch('.js/**/*.js',['jsmin']);
+    gulp.watch(['./tpls/*.html','index.html'],['htmlmin']);
 });

@@ -7,20 +7,17 @@
      <p class="js_time_p">本场剩余时间 : <span class="js_time"></span></p>
     </div>
 
-    <img class="need-your-help-tip" src="./images/need-your-help-tip.jpg" alt=""/>
+    <img class="need-your-help-tip" src="./images/need-your-help-tip.jpg" alt="">
     <!-- 商品图片 -->
     <div class="act-top-bg-wrap">
-      <img class="act-top-img" ng-src="{{actTopBgInfo.src}}" alt=""/>
+      <img class="act-top-img" ng-src="{{actTopBgInfo.src}}" alt="">
       <div class="goods-info-wrap">
         <p class="price">￥{{actTopBgInfo.price}}</p>
-        <div class="help-ta-kill js_help_ta_kill"
-             ng-click="onHelpTaKillClick()">
+        <div class="help-ta-kill js_help_ta_kill" ng-click="onHelpTaKillClick()">
             帮TA砍价</div>
-        <div class="now-pay-btn js_now_pay_btn"
-               ng-click="onPayClick()">
+        <div class="now-pay-btn js_now_pay_btn" ng-click="onPayClick()">
             立即付款</div>
-        <div class="start-kill-again js_start_kill_again"
-             ng-click="onStartAgain()">
+        <div class="start-kill-again js_start_kill_again" ng-click="onStartAgain()">
           重新发起砍价</div>
           <!--<p>发起砍价团</p>-->
           <!--<p>立即付款</p>-->
@@ -36,8 +33,8 @@
    <ul class="tab-wrap-ul">
        <li class="single-tab-li" ng-repeat="tab in tabs" ng-click="onTabClick1(tab)">
            <div class="two-img-wrap" ng-class="{activeShowRed:$index==changeIndex}">
-               <img class="tab-img tab-img-orange" ng-src="{{tab.src_orange}}" alt=""/>
-               <img class="tab-img tab-img-red" ng-src="{{tab.src_red}}" alt=""/>
+               <img class="tab-img tab-img-orange" ng-src="{{tab.src_orange}}" alt="">
+               <img class="tab-img tab-img-red" ng-src="{{tab.src_red}}" alt="">
            </div>
            <p class="tab-name">{{tab.check_name}}</p>
        </li>
@@ -49,7 +46,7 @@
        <ul class="user-scroll-wrap js_user_scroll_wrap">
          <li class="single-user-li js_single_user_li" ng-repeat="userInfo in userInfos">
            <div class="avatar-wrap">
-              <img class="avatar" ng-src="{{userInfo.avatar}}" alt=""/>
+              <img class="avatar" ng-src="{{userInfo.avatar}}" alt="">
            </div>
            <p class="words">
              <span>{{userInfo.name}}:</span>
@@ -59,7 +56,7 @@
          </li>
            <li class="single-user-li js_single_user_li" ng-repeat="userInfo in userInfos">
                <div class="avatar-wrap">
-                   <img class="avatar" ng-src="{{userInfo.avatar}}" alt=""/>
+                   <img class="avatar" ng-src="{{userInfo.avatar}}" alt="">
                </div>
                <p class="words">
                    <span>{{userInfo.name}}:</span>
@@ -72,16 +69,15 @@
      <!--2.其他砍价团-->
      <div class="other-kill-tuan-wrap common-content-class {{pageClass}}" ng-if="changeIndex==1">
         <div class="two-kill-wrap" ng-repeat="twoAct in actBgSrc | filter : actFilterFn">
-          <img class="act-img" ng-src="{{twoAct.src}}" alt=""/>
-          <div class="start-btn-{{twoAct.src_id}} js_start_btn_{{twoAct.src_id}}"
-               ng-click="onStartKillClick(twoAct)">
+          <img class="act-img" ng-src="{{twoAct.src}}" alt="">
+          <div class="start-btn-{{twoAct.src_id}} js_start_btn_{{twoAct.src_id}}" ng-click="onStartKillClick(twoAct)">
           </div>
         </div>
      </div>
      <!--3.活动规则-->
      <div class="act-rulers-wrap common-content-class {{pageClass}}" ng-if="changeIndex==2">
-         <img class="rule-img" src="./images/activity-declare-img.jpg" alt=""/>
-         <img class="rule-img" src="./images/activity-rules-img.jpg" alt=""/>
+         <img class="rule-img" src="./images/activity-declare-img.jpg" alt="">
+         <img class="rule-img" src="./images/activity-rules-img.jpg" alt="">
      </div>
    </div>
 
@@ -91,9 +87,7 @@
    </div>
 
    <!-- 帮ta砍价成功的弹窗 -->
-   <div class="kill-click-success-mask"
-        ng-show="isShowSuccessMask"
-        ng-click="onCloseMask()">
+   <div class="kill-click-success-mask" ng-show="isShowSuccessMask" ng-click="onCloseMask()">
      <div class="kill-success-mask-bg" ng-click="onStopPropagationClick()">
         <div class="close-btn" ng-click="onCloseMask()"></div>
         <h1>你刚刚砍了<span> {{actTopBgInfo.actName}} </span></h1>
