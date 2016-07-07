@@ -1,12 +1,33 @@
 
-// ֪ʶ�㣺
+
+// 知识点：
 // angular.js + require.js + node.js
 
-1. node.js ����ط�����
-2. angular.js ������ҳӦ��
-3. ���ʱ��ص�css,js,img�Ⱦ�̬�ļ�
-4. ��������server1.js���ڸ�Ŀ¼�£���Git Bash
-   ���node server1.js
+1. node.js 搭建本地服务器
+2. angular.js 创建单页应用
+3. 访问本地的css,js,img等静态文件
+4. 启动：在server1.js所在根目录下，打开Git Bash
+   命令：node server1.js
    http://127.0.0.1:8082/app/index.html#/index
 
-5.���ۻ bargain����gulp��localStorage
+5.砍价活动 bargain，加gulp，localStorage，存储砍价的次数和价格等信息
+   在server2.js所在根目录下，打开Git Bash
+   命令：node server2.js
+   首页：http://127.0.0.1:8083/bargain/index.html#/index/home
+   倒计时页：http://127.0.0.1:8083/bargain/index.html#/index/act_down?goods_type=0
+   根路径的index.html下面的脚本引入，要在require_config.js中配置
+    引入开发环境下的脚本或压缩环境下的脚本
+   5.1 开发环境
+      index.html
+       <script src="./js/require.js"></script>
+       <script src="./js/require_config.js"></script>
+       <script src="index.js"></script>
+      require_config.js
+       'baseUrl' : '../bargain/js/', // 开发环境放开
+   5.2 压缩环境
+      index.html
+       <script src="./lib/js/require.js"></script>
+       <script src="./lib/js/require_config.js"></script>
+       <script src="index.js"></script>
+      require_config.js
+       'baseUrl' : './lib/js/', // 压缩环境放开

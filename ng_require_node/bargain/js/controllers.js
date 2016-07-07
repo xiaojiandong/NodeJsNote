@@ -41,7 +41,7 @@ define(['base','services'],function(base,services){
              $('.js_start_kill_again').show(); // 重新发起
      };
 
-     $scope.onStartKillClick = function(actBg){
+     $rootScope.onStartKillClick = function(actBg){
          // todo 发起倒计时请求
          //console.log(actBg);
          //return false;
@@ -49,14 +49,17 @@ define(['base','services'],function(base,services){
          if(localStorage.getItem("goodsStatus")){
              localStorage.removeItem("goodsStatus");//清除本地缓存goodsStatus的值
          }
-
-         location.reload();
+         if(localStorage.getItem("dateObj")){
+             location.reload();
+         }
+         //location.reload();
          window.location.href='http://127.0.0.1:8083/' +
          'bargain/index.html#/index/act_down?goods_type='+actBg.src_id;
-         var startTime = '2016/7/5 17:20:20';
-         var endTime = '2016/7/5 17:20:30';
+         var startTime = '2016/7/7 17:20:20';
+         var endTime = '2016/7/7 17:20:30';
          // 倒计时工具方法
          SUBJ.getCutTimeDown('js_time',startTime,endTime,$rootScope.callback);
+
      };
 
      var DEVICE_HEIGHT = $(window).height(); // 设备窗口高度
@@ -102,6 +105,18 @@ define(['base','services'],function(base,services){
    $scope.isShowSuccessMask = false; // 是否显示砍价成功的弹窗
    $scope.hasCut = false;// 是否已帮ta砍价过
    $rootScope.randomPrice = 0; //初始状态无人砍价
+   // 获取单个商品砍价次数的存储数据
+   var time = 0; // 累加的次数
+   var cut; //本地存储的次数
+   if(localStorage.getItem('cutKillTime_'+goodsType) && // 存在次数，则先取出来
+          localStorage.getItem('cutKillTime_'+goodsType) != null &&
+          localStorage.getItem('cutKillTime_'+goodsType) != 'undefined'){
+          cut = JSON.parse(localStorage.getItem('cutKillTime_'+goodsType));
+          cut = parseInt(cut);
+          time = cut + 1;
+   }else{ // 首次砍，次数加1，并存入到本地存储
+          time += 1;
+   }
    // 获取本地存储的数据
    if( localStorage.getItem('goodsStatus') &&
        localStorage.getItem('goodsStatus') != null &&
@@ -121,20 +136,11 @@ define(['base','services'],function(base,services){
        $scope.onHelpTaKillClick = function(){
            if(!$scope.hasCut){ // 第一次砍
                // 存储砍的次数，最多不超过3次
-               var time = 0;
-               if(localStorage.getItem('cutKillTime') && // 存在次数，则先取出来
-                   localStorage.getItem('cutKillTime') != null &&
-                   localStorage.getItem('cutKillTime') != 'undefined'){
-                   var cut = JSON.parse(localStorage.getItem('cutKillTime'));
-                   cut = parseInt(cut);
-                   time = cut + 1;
-               }else{ // 首次砍，次数加1，并存入到本地存储
-                   time += 1;
-               }
-               localStorage.setItem('cutKillTime',JSON.stringify(time));
-               var cut = JSON.parse(localStorage.getItem('cutKillTime'));
+
+               localStorage.setItem('cutKillTime_'+goodsType,JSON.stringify(time));
+               var cut1 = JSON.parse(localStorage.getItem('cutKillTime_'+goodsType));
                console.log('砍的次数cut：' + cut);
-               if(cut > 3){ // 超过3次，则禁止再砍
+               if(cut1 > 3){ // 超过3次，则禁止再砍
                  alert($rootScope.actTopBgInfo.actName + ' 已经砍了3次了，不能再砍了');
                }else{
                    $('.js_help_ta_kill').text('已砍过').css('color','#999');
@@ -146,10 +152,34 @@ define(['base','services'],function(base,services){
                    goodsData.hasCutLocal = true;
                    goodsData.price = $rootScope.actTopBgInfo.price; //将砍价后的价格存储到本地
                    goodsData.randomPrice = $scope.randomCutPrice; //将砍的价格存储到本地
+
+
+
                    $rootScope.randomPrice = goodsData.randomPrice;
                    localStorage.setItem('goodsStatus',JSON.stringify(goodsData));
                    // 弹窗显示还能砍的次数
-                   $scope.leaveCutTime = 3-cut;
+                   $scope.leaveCutTime = 3-cut1;
+                   //存储砍价最后一次商品的价格
+
+                   var goods = {};
+                   if(goodsType==0){ // 瘦脸针
+                       goods.shoulian = {
+                           'final_price' : $rootScope.actTopBgInfo.price,
+                           'cut_price' : $scope.randomCutPrice
+                       };
+                   }else if(goodsType==1){ // 水光针
+                       goods.shuiguang = {
+                           'final_price' : $rootScope.actTopBgInfo.price,
+                           'cut_price' : $scope.randomCutPrice
+                       };
+                   }else{ // 激光脱毛
+                       goods.jiguang = {
+                           'final_price' : $rootScope.actTopBgInfo.price,
+                           'cut_price' : $scope.randomCutPrice
+                       }
+                   }
+                   localStorage.setItem('lastGoodsInfo_'+goodsType,JSON.stringify(goods));
+
                }
            }else{
 
@@ -158,7 +188,31 @@ define(['base','services'],function(base,services){
        };
    }
 
-
+    // 根据最后一次商品砍价的状态，页面刷新，赋值价格信息
+      if(localStorage.getItem('lastGoodsInfo_'+goodsType) && // 存在次数，则先取出来
+          localStorage.getItem('lastGoodsInfo_'+goodsType) != null &&
+          localStorage.getItem('lastGoodsInfo_'+goodsType) != 'undefined'){
+          var cut = JSON.parse(localStorage.getItem('cutKillTime_'+goodsType));
+          var lastGoods = JSON.parse(localStorage.getItem('lastGoodsInfo_'+goodsType));//最后一次砍的商品信息
+          console.log('水光针的砍价次数');
+          console.log(cut);
+          var info;
+          if(goodsType==0){
+              info=lastGoods.shoulian;
+          }else if(goodsType==1){
+              info=lastGoods.shuiguang;
+          }else{
+              info=lastGoods.jiguang;
+          }
+          if(cut >= 3){ //超过3次砍价，则页面刷新，获取最后一次砍价的价格
+              $rootScope.actTopBgInfo.price = info.final_price;
+              $rootScope.randomPrice = info.cut_price;
+              $('.cut-words-tips-wrap').html($rootScope.actTopBgInfo.actName+"的3次砍价机会已用完<br/>赶快去付款吧");
+              $('.cut-words-tips-wrap').css('padding-top','30px');
+              $('.js_help_ta_kill').hide();
+              $('.js_now_pay_btn').show();
+          }
+      }
       /*
       setTimeout(function(){
           var goodsData = {hasCut:false};

@@ -7,6 +7,7 @@ var minifycss = require('gulp-minify-css'); // 压缩.css
 var uglify = require('gulp-uglify'); // 压缩.js
 var del = require('del'); // 清除之前的文件
 var imagemin = require('gulp-imagemin');// 图片压缩
+var cache = require('gulp-cache');
 var livereload = require('gulp-livereload'); //文件监听
 
 // 压缩编译less文件
@@ -26,14 +27,20 @@ gulp.task('htmlmin',function(){
      .pipe(livereload({start:true}));
 });
 
+// 压缩img
+gulp.task('imgmin',function(){
+   gulp.src('./images/**/*')
+     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+     .pipe(gulp.dest('./lib/images/'));
+});
 
 //监听js文件
 gulp.task('jsmin',function(){
-  //gulp.src('./js/**/*.js')
-    gulp.src(['./js/controllers.js',
-        './js/services.js',
-        'index.js'
-    ])
+  gulp.src('./js/*.js')
+  //  gulp.src(['./js/controllers.js',
+  //      './js/services.js',
+  //      'index.js'
+  //  ])
       .pipe(uglify())
       .pipe(gulp.dest('./lib/js'))
       .pipe(livereload({start:true}));
@@ -46,7 +53,7 @@ gulp.task('clean' , function(cb){
 }) ;
 
 gulp.task('default',['clean'],function(){
-  gulp.start(['cssmin','jsmin','htmlmin']);
+  gulp.start(['cssmin','jsmin','htmlmin','imgmin']);
 });
 
 gulp.task('watch' , function(){
@@ -54,5 +61,6 @@ gulp.task('watch' , function(){
     // 监听开发路径文件的变化，并执行该任务style
     gulp.watch('./css/*.less',['cssmin']);
     gulp.watch('.js/**/*.js',['jsmin']);
+    gulp.watch('./images/**/*',['imgmin']);
     gulp.watch(['./tpls/*.html','index.html'],['htmlmin']);
 });

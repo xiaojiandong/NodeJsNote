@@ -94,7 +94,7 @@
         <h1>砍掉了<span> {{randomPrice}} </span>元</h1>
         <h1>最终价格<span> ￥{{actTopBgInfo.price}} </span></h1>
         <h1 ng-if="leaveCutTime!=0">当前商品还能砍 {{leaveCutTime}} 次</h1>
-        <h1 ng-if="leaveCutTime==0">对不起砍价次数用完</h1>
+        <h1 ng-if="leaveCutTime==0">{{actTopBgInfo.actName}}的砍价次数用完</h1>
         <div class="share-friends-btn" ng-click="onShareFriendsClick()">分享给好友</div>
      </div>
    </div>

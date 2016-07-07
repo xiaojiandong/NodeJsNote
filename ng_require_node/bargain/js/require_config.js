@@ -1,7 +1,7 @@
 
 require.config({
-   'baseUrl' : '../bargain/js/',
-   //'baseUrl' : 'dev/js/scripts/',
+   //'baseUrl' : '../bargain/js/', // 开发环境放开
+   'baseUrl' : './lib/js/', // 压缩环境放开
    'paths' : {
      'jquery' : 'http://cdn.bootcss.com/jquery/2.1.3/jquery.min',
      'jquery_confirm' : 'http://cdn.bootcss.com/jquery-confirm/2.0.0/jquery-confirm.min',

@@ -15,7 +15,6 @@
     <p class="tab-name">{{tab.tab_name}}</p>
   </li> 
 </ul>
-
 <!-- 对应tab切换卡的商品 -->
 <div class="goods-bottom-wrap" ng-repeat="actBg in actBgSrc | filter: { src_id: activeIndex } ">
  <div class="act-bg-wrap" ng-class="current_act_bg_wrap_{{activeIndex}}">
