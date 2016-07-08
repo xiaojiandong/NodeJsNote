@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>seajs详情页</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/jquery-confirm/2.0.0/jquery-confirm.min.css" rel="stylesheet">
+    <style>
+      .test{
+        width: 320px;
+        height: 150px;
+        background : pink;
+      }
+    </style>
+</head>
+<body>
+<h1>1. seajs测试 - 按需引入模块</h1>
+<h1>2. 当前页面引入了公共的jquery.js，subj.js</h1>
+
+<h2>3. 引入单独的jquery-confirm.js</h2>
+<div class="js_test test">
+    <h1>测试jquery-confirm</h1>
+    <h2>点击</h2>
+</div>
+
+<h2>当前是详情页detail.html所在的是根目录 sea/demo/</h2>
+
+<script src="http://cdn.bootcss.com/seajs/2.1.1/sea.js"></script>
+<script src="../js/common/sea_config.js"></script>
+<script>
+  seajs.use('./detail');//入口js的路径要搞清楚
+</script>
+</body>
+</html>

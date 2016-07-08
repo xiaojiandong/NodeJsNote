@@ -1,0 +1,11 @@
+
+
+// 1. CMD规范 seajs
+// 入口index.html和入口index.js
+// 入口detail.html和入口detail.js
+
+// 如何加载jquery插件：https://segmentfault.com/q/1010000002408487
+解决方法：
+  在本地的jquery.min.js中
+  找到："function"==typeof define&&define.amd&&define("jquery",[],function(){return n})
+  并在后面加上："function"==typeof define&&define.cmd&&define("jquery",[],function(){return n})

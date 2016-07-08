@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>seajs首页</title>
+    <link href="http://cdn.bootcss.com/jquery-confirm/2.0.0/jquery-confirm.min.css" rel="stylesheet">
+    <style>
+      .test{
+        width: 250px;
+        height: 150px;
+        background : pink;
+      }
+    </style>
+</head>
+<body>
+<h1>1. seajs测试 - 按需引入模块</h1>
+<h1>2. 当前页面引入了公共的jquery.js，subj.js</h1>
+
+<h2>3. 引入单独的angular.js</h2>
+<div class="js_test test">
+    <h1>测试jquery</h1>
+    <h2>点击</h2>
+</div>
+
+<div ng-controller="HomeCtrl" style="background: rgba(0,0,0,0.3)">
+ <p>用angular渲染数据</p>
+ <p ng-repeat="user in users">
+   名字 - {{user.name}},
+   年龄 - {{user.age}}
+ </p>
+</div>
+
+<h2>当前是首页index.html所在的是根目录 sea/</h2>
+
+<script src="http://cdn.bootcss.com/seajs/2.1.1/sea.js"></script>
+<script src="js/common/sea_config.js"></script>
+<script>
+  seajs.use('./index');//入口js路径要搞清楚
+</script>
+</body>
+</html>
